@@ -7,6 +7,8 @@ import android.widget.ImageView
 import java.util.Random
 
 class MainActivity : AppCompatActivity() {
+
+    lateinit var diceImg :ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -14,6 +16,7 @@ class MainActivity : AppCompatActivity() {
         gobutton.setOnClickListener {
             diceRoll()
                                     }
+        diceImg=findViewById(R.id.dice_Image)
     }
 
     private fun diceRoll() {
@@ -25,7 +28,6 @@ class MainActivity : AppCompatActivity() {
             5 -> R.drawable.dice_5
             else -> R.drawable.dice_6
         }
-        val diceImg:ImageView = findViewById(R.id.dice_Image)
         diceImg.setImageResource(nextImg)
     }
 
